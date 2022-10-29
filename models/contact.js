@@ -29,9 +29,6 @@ const add = Joi.object({
   favorite: Joi.bool(),
 });
 
-// const updateFavorite = Joi.object({
-//   favorite: Joi.bool().required(),
-// });
 
 const schemas = { add };
 

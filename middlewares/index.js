@@ -1,5 +1,5 @@
 const validation = require("./validations");
-const isValidId = require("./isVallidId");
+const isValidId = require("./isValidId");
 const authMiddle = require("./authMiddle");
 
 module.exports = {
