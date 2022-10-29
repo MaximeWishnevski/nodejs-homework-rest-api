@@ -15,7 +15,6 @@ router.post("/", validation(schemas.add), ctrlWrapper(ctrl.addContact));
 router.patch(
   "/:contactId/favorite",
   isValidId,
-  
   ctrlWrapper(ctrl.updateStatusContact)
 );
 
