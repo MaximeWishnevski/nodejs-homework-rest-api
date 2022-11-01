@@ -3,6 +3,7 @@ const ctrlWrapper = require("../../helpers/ctrlWrapper");
 const ctrl = require("../../controllers/auth");
 const { validation, authMiddle, upload } = require("../../middlewares");
 const { schemas } = require("../../models/user");
+const authMiddle = require("../../middlewares/authMiddle");
 
 const router = express.Router();
 

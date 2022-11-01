@@ -16,7 +16,8 @@ const signup = async (req, res) => {
     password: hashPassword,
     avatarURL,
   });
-  res.status(201).json({
+const result = await User.create({ ...req.body, password: hashPassword });
+res.status(201).json({
     user: {
       email: result.email,
       subscription: result.subscription,

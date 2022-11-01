@@ -29,7 +29,6 @@ const add = Joi.object({
   favorite: Joi.bool(),
 });
 
-
 const schemas = { add };
 
 const Contact = model("contact", contactSchema);
