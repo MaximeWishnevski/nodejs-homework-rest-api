@@ -6,7 +6,7 @@ const { SG_KEY } = process.env;
 sgMail.setApiKey(SG_KEY);
 
 const sendMail = async (data) => {
-  const mail = { ...data, from: "mega_sendgrid@ukr.net" };
+  const mail = { ...data, from: "velolivefan@gmail.com" };
   await sgMail.send(mail);
   return true;
 };

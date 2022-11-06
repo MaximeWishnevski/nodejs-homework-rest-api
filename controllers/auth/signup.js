@@ -5,6 +5,7 @@ const gravatar = require("gravatar");
 const sendMail = require("../../helpers/sendMail");
 const idGenerate = require("bson-objectid");
 
+const {BASE_URL} = process.env;
 
 const signup = async (req, res) => {
   const { email, password } = req.body;
@@ -26,7 +27,7 @@ const signup = async (req, res) => {
   const mail = {
     to: email,
     subject: "Confirm email",
-    html: `<a target="_blank" href="http://localhost:3000/api/auth/verify/${verificationToken}">Confirm</a>`,
+    html: `<a target="_blank" href="${BASE_URL}/api/auth/verify/${verificationToken}">Confirm</a>`,
   };
   await sendMail(mail);
 

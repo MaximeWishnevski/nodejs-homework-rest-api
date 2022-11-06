@@ -2,6 +2,8 @@ const { User } = require("../../models/user");
 const sendMail = require("../../helpers/sendMail");
 const { createError } = require("../../helpers/createError");
 
+const {BASE_URL} = process.env;
+
 const resendVerifyEmail = async (req, res) => {
   const { email } = req.body;
   const user = await User.findOne({ email });
@@ -14,7 +16,7 @@ const resendVerifyEmail = async (req, res) => {
   const mail = {
     to: email,
     subject: "Confirm email",
-    html: `<a target="_blank" href="http://localhost:3000/api/auth/verify/${user.verificationToken}">Confirm</a>`,
+    html: `<a target="_blank" href="${BASE_URL}/api/auth/verify/${user.verificationToken}">Confirm</a>`,
   };
   await sendMail(mail);
   res.json({
